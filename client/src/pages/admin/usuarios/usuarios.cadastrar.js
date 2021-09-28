@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+  formControl:{
+    width:'100%'
+  }
 }));
 
 export default function UsuariosCadastrar() {
@@ -66,14 +69,28 @@ export default function UsuariosCadastrar() {
                   />
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <TextField
-                    required
-                    id="genero"
-                    name="genero"
-                    label="Gênero"
-                    fullWidth
-                    autoComplete="genero"
-                  />
+                <FormControl className={classes.formControl}>
+                    <InputLabel id="genero"> Gênero </InputLabel>
+                    <Select
+                      labelId="genero"
+                      id="endereco_usuario"
+                      //value={endereco_usuario}
+                      //onChange={e => set(e.target.value)}
+                    >
+                      <MenuItem value={1}>Homem Cisgênero</MenuItem>
+                      <MenuItem value={2}>Mulher Cisgênero</MenuItem>
+                      <MenuItem value={3}>Mulher Trans</MenuItem>
+                      <MenuItem value={4}>Homem Trans</MenuItem>
+                      <MenuItem value={5}>Travesti</MenuItem>
+                      <MenuItem value={6}>Transexual</MenuItem>
+                      <MenuItem value={7}>Queer</MenuItem>
+                      <MenuItem value={8}>Não-binário</MenuItem>
+                      <MenuItem value={9}>Gênero Fluído</MenuItem>
+                      <MenuItem value={10}>Transgênero</MenuItem>
+                      <MenuItem value={11}>Prefiro não responder</MenuItem>
+                      <MenuItem value={12}>Outro / outra</MenuItem>
+                      </Select>
+                  </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                   <TextField
@@ -187,7 +204,7 @@ export default function UsuariosCadastrar() {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                 <FormControl className={classes.formControl}>
-                    <InputLabel id="endereco_usuario">Estado</InputLabel>
+                    <InputLabel id="endereco_usuario"> Estado </InputLabel>
                     <Select
                       labelId="endereco_usuario"
                       id="endereco_usuario"
